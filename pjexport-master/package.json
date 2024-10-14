@@ -1,0 +1,16 @@
+{
+  "name": "unnamed-site-3v.2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.1",
+    "nodemailer": "^6.9.15"
+  }
+}

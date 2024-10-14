@@ -1,0 +1,600 @@
+/* ==========================
+   CSS Document
+========================== */
+
+/* --------------------------
+   Reset Styles
+--------------------------- */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Ensure full width */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+section {
+  margin: 0;
+  padding: 0;
+}
+
+/* --------------------------
+   General Sections
+--------------------------- */
+.features-section, 
+#about-us, 
+#offer-section, 
+#products {
+  margin: 0; /* Remove any default margins */
+  padding: 20px 0; /* Adjust as necessary */
+}
+
+.shadow-blue {
+  border-radius: 100px; /* Makes the borders circular */
+  border: 2px solid #000000; /* Solid black border */
+  box-shadow: 8px 12px 0px rgba(0, 0, 255, 1); /* Solid blue shadow */
+  padding: 20px; /* Space between the border and content */
+  background-color: #ffffff; /* Background color for better contrast (optional) */
+}
+
+/* --------------------------
+   Navbar Styles
+--------------------------- */
+
+/* Reduce the overall height of the navbar */
+.navbar {
+  padding: 0px 0;  /* Adjust padding to reduce height */
+}
+
+/* Adjust the logo size if needed */
+.navbar-brand img {
+  max-height: 80px; /* Adjust logo height */
+  width: auto; /* Keeps the aspect ratio */
+}
+
+/* Optionally, reduce the font size for nav links */
+.navbar-nav .nav-link {
+  font-size: 17px; /* Adjust the font size as needed */
+  padding: 0px 0px; /* Reduce padding around links to make the header smaller */
+  color: #ffffff;
+}
+
+/* Change color on hover */
+.navbar-nav .nav-link:hover {
+  color: #FFD700; /* Change this to your desired hover color (gold in this example) */
+}
+
+/* --------------------------
+   Features Section Styles
+--------------------------- */
+
+/* Apply black background specifically to the features-section */
+.features-section {
+  background-color: black;
+  padding: 20px;
+}
+
+/* Feature Box Styling */
+.feature-box {
+  border-radius: 50px; /* Rounded corners */
+  box-shadow: 8px 8px 0px 0px #274eff, /* Blue shadow */
+              10px 10px 0px 0px black; /* Black outline shadow */
+  height: 310px; /* Fixed height for uniformity */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  max-width: 350px; /* Ensure consistent width for all feature boxes */
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 2px solid black;
+}
+
+/* Styling for images inside feature boxes */
+.feature-box img {
+  width: 180px;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+/* Specific styling for the third image */
+.feature-box:nth-child(3) img {
+  width: 140px;
+  margin-top: 0px;
+}
+
+/* Additional margin to move all images down */
+.feature-box img {
+  margin-top: 0px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .col-md-4 {
+    flex: 0 0 100%; /* Images will take up the full width on small screens */
+    max-width: 100%;
+  }
+}
+
+/* Mission & Values Box Styling */
+.mission-values-box {
+  border-radius: 50px; /* Rounded corners */
+  box-shadow: 8px 8px 0px 0px #274eff, /* Blue shadow */
+              10px 10px 0px 0px black; /* Black outline shadow */
+  height: 310px; /* Fixed height for uniformity */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  max-width: 350px; /* Ensure consistent width for all boxes */
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 2px solid black;
+}
+
+/* Feature Box Styling */
+.featured-box {
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 8px 8px 0px 0px #274eff, /* Blue shadow */
+              10px 10px 0px 0px black; /* Black outline shadow */
+  padding: 10px; /* Reduced padding for less space inside */
+  background-color: #ffffff; /* Background color */
+  border: 2px solid black; /* Border */
+  margin: 10px auto; /* Reduced vertical margin */
+  max-width: 300px; /* Smaller maximum width */
+  height: 200px; /* Auto height to accommodate content */
+}
+
+
+
+/* Styling for Our Story Section */
+#our-story-section {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+}
+
+#our-story-section h2 {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+#our-story-section p {
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+#our-story-section h4 {
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+#our-story-section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+#our-story-section ul li {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+#our-story-section ul li strong {
+  color: #000000;
+}
+
+
+/* Wiping Rags Section Styling */
+section#our-story-section {
+  background-color: #f8f9fa;
+}
+
+h2 {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+p {
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+h4 {
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li strong {
+  color: #000000;
+}
+
+img.product-photo {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+
+/* --------------------------
+   Offer Section Flexbox Layout
+--------------------------- */
+
+/* Flexbox ensures that the items in the row have equal height */
+#offer-section .row {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Equal height for both image and text boxes */
+.offer-box {
+  height: 350px; /* Fixed height for image and text containers */
+}
+
+/* Rounded corners for containers */
+#offer-section .rounded {
+  border-radius: 40px;
+}
+
+/* --------------------------
+   Image Styles
+--------------------------- */
+
+/* Ensure images don't stretch but still cover the area */
+#offer-section .img-fluid {
+  object-fit: cover;
+  width: 100%;
+  height: 100%; /* Fills its container */
+}
+
+/* Styling for the image container */
+.offer-box-container {
+  width: 100%; /* Full width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 30px; /* Rounded corners */
+  box-shadow: none; /* No shadow */
+}
+
+/* Ensure the image and text box have the same height */
+.offer-box-content,
+.offer-box-container {
+  height: 100%; /* Stretch to full height of parent */
+}
+
+/* --------------------------
+   Text Box Styles
+--------------------------- */
+
+/* Text container box style */
+#offer-section .border {
+  border: 2px solid #000000;
+  padding: 20px;
+  text-align: center;
+  height: 100%; /* Same height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Headings inside the text box */
+#offer-section h4 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/* Paragraphs grow to fit the container */
+#offer-section p {
+  flex-grow: 1;
+}
+
+/* --------------------------
+   Offer Box Content Styles
+--------------------------- */
+
+/* Headings inside the offer box */
+.offer-box-content h4 {
+  font-size: 1.25rem; /* Size for the heading */
+  margin-bottom: 0.5rem; /* Space below heading */
+}
+
+/* Paragraph styling inside the offer box */
+.offer-box-content p {
+  flex-grow: 1; /* Allow paragraph to grow */
+  margin: 0; /* Remove default margins */
+}
+
+/* Button styles within the offer box */
+.offer-box-content .btn {
+  padding: 10px 20px; /* Consistent padding */
+  border: 2px solid #000000; /* Button border */
+  background-color: #ffffff; /* Button background */
+  color: #274eff; /* Button text color */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Button hover effects */
+.offer-box-content .btn:hover {
+  background-color: #274eff; /* Change background on hover */
+  color: #ffffff; /* Change text color on hover */
+  box-shadow: none; /* Reset shadow on hover */
+}
+
+/* --------------------------
+   Offer Box Link Styles
+--------------------------- */
+
+/* Styling the entire offer box as a link */
+.offer-box-link {
+  display: block; /* Makes the entire box clickable */
+  background-color: #ffffff;
+  color: #000000;
+  padding: 15px 30px; /* Similar padding */
+  border: 2px solid black; /* Border for button */
+  border-radius: 50px; /* Rounded edges */
+  box-shadow: 4px 4px 0px 0px #274eff, 10px 10px 0px 0px black; /* Initial shadow */
+  font-size: 1.1rem; /* Font size */
+  text-decoration: none; /* No underline for links */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for offer box link */
+.offer-box-link:hover {
+  background-color: #274eff; /* Change background to blue */
+  color: #ffffff; /* Change text color to white */
+  box-shadow: 0px 0px 0px 0px #274eff, 0px 0px 0px 0px black; /* Remove shadow */
+  transform: translate(4px, 4px); /* Move down and right */
+}
+
+/* Ensure the link remains black and without underline in all states */
+#offer-section .offer-box-link,
+#offer-section .offer-box-link:visited,
+#offer-section .offer-box-link:hover,
+#offer-section .offer-box-link:focus {
+  color: #000000; /* Black color */
+  text-decoration: none; /* No underline */
+}
+
+/* --------------------------
+   About Us Section Styles
+--------------------------- */
+
+#about-us-section {
+  padding: 60px 0; /* Padding above and below the section */
+  background-color: #f8f9fa; /* Light background color for the section */
+}
+
+/* About Us title outside the container */
+.about-us-title {
+  text-align: center; /* Center the title */
+  font-size: 2rem; /* Title size */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+/* Container for the About Us section */
+.about-us-container {
+  background-color: #ffffff; /* White background for the container */
+  border: 2px solid #000000; /* Black border for the container */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 4px 4px 0px 0px #274eff, 10px 10px 0px 0px black; /* Box shadow for depth */
+  padding: 30px; /* Padding inside the container */
+  margin: 0 auto; /* Center the container */
+  max-width: 800px; /* Maximum width of the container */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Clickable About Us link */
+.about-us-link {
+  display: block; /* Makes the entire section clickable */
+  text-decoration: none; /* Removes underline */
+  color: inherit; /* Keeps the text color as black */
+}
+
+/* Hover effect for the entire About Us link (the container) */
+.about-us-link:hover .about-us-container {
+  background-color: #274eff; /* Change background to blue on hover */
+  transform: translateY(4px); /* Move down on hover */
+  box-shadow: none; /* Remove shadow on hover */
+}
+
+/* Paragraph styling inside the About Us content */
+.about-us-container p {
+  text-align: center; /* Center the text */
+  margin: 0; /* Remove default margin */
+}
+
+
+
+/* --------------------------
+   Image Container Styles
+--------------------------- */
+
+/* Ensure the image is contained within the website width */
+.image-container {
+  width: 100%; /* Full width */
+  padding: 0; /* Remove any padding */
+  overflow: hidden; /* Prevent overflow */
+  text-align: center; /* Centers the image */
+  margin: 0; /* Remove any margin */
+}
+
+.image-container img {
+  max-width: 100%; /* Fully responsive */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensures there are no gaps caused by inline display */
+  margin: 0 auto; /* Center the image */
+}
+
+
+/* --------------------------
+   Social Media Icon Styles
+--------------------------- */
+
+.social-media-container {
+  padding: 10px 0; /* Spacing */
+}
+
+.social-icon {
+  width: 60px; /* Fixed size */
+  height: 60px;
+  display: inline-block; /* Inline element */
+  object-fit: contain; /* Maintain aspect ratio */
+}
+
+.icon-circle {
+  width: 55px; /* Circle size */
+  height: 55px;
+  border-radius: 50%; /* Circular shape */
+  background-color: white; /* White background */
+  display: flex; /* Center icon */
+  align-items: center; /* Vertical center */
+  justify-content: center; /* Horizontal center */
+  margin-right: 15px; /* Spacing */
+  position: relative;
+  box-shadow: 4px 4px 0px 0px #274eff; /* Blue shadow */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.icon-circle:hover {
+  box-shadow: 0px 0px 0px 0px #274eff; /* Remove shadow */
+  transform: translate(4px, 4px); /* Pressed effect */
+  background-color: #274eff; /* Change to blue */
+}
+
+/* Optional: Icon styling */
+.icon {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+/* --------------------------
+   Location Circle Styles
+--------------------------- */
+
+.location-circle {
+  margin-right: 15px; /* Spacing */
+}
+
+/* --------------------------
+   List Item Styles
+--------------------------- */
+
+/* Space between list items */
+.list-unstyled > li {
+  margin-bottom: 15px; /* Spacing */
+}
+
+/* --------------------------
+   Logo Styles
+--------------------------- */
+
+.logo {
+  max-width: 90%; /* Logo size */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 0; /* Remove margin */
+}
+
+/* --------------------------
+   General Container Styles
+--------------------------- */
+
+.container {
+  margin-bottom: 0; /* No bottom margin */
+  padding-bottom: 0; /* No bottom padding */
+}
+
+/* --------------------------
+   Price List Button Styles
+--------------------------- */
+
+.btn-download-price-list {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 15px 30px; /* Padding */
+  border: 2px solid black;
+  border-radius: 50px; /* Rounded edges */
+  box-shadow: 4px 4px 0px 0px #274eff, 10px 10px 0px 0px black; /* Initial shadow */
+  font-size: 1.1rem; /* Font size */
+  text-decoration: none; /* No underline */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.btn-download-price-list:hover {
+  background-color: #274eff; /* Change background to blue */
+  color: #ffffff; /* Change text color to white */
+  box-shadow: 0px 0px 0px 0px #274eff, 0px 0px 0px 0px black; /* Remove shadow */
+  transform: translate(4px, 4px); /* Move down and right */
+}
+
+/* --------------------------
+   General Page Styles
+--------------------------- */
+
+/* Page title styling */
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #274eff;
+  margin-bottom: 20px;
+}
+
+/* Info box styling */
+.info-box {
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.info-box:hover {
+  transform: translateY(5px); /* Push-down effect */
+  box-shadow: none; /* Remove shadow */
+}
+
+.info-box h3 {
+  color: #274eff;
+  margin-bottom: 10px;
+}
+
+/* Button consistency */
+a.btn {
+  padding: 10px 20px;
+  border: 2px solid #274eff;
+  color: #274eff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a.btn:hover {
+  background-color: #274eff; /* Change background on hover */
+  color: white; /* Change text color on hover */
+}
+
+/* --------------------------
+   Footer Styles
+--------------------------- */
+
+footer {
+  padding: 0; /* No padding */
+  margin: 0; /* No margin */
+}
