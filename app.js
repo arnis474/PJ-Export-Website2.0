@@ -1,4 +1,4 @@
-const express = require('express');
+cconst express = require('express');
 const path = require('path');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
@@ -6,8 +6,8 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
-// Middleware to serve static files (CSS, images, etc.)
-app.use(express.static(path.join(__dirname, 'static')));
+// Middleware to serve static files (CSS, images, etc.) from the root directory
+app.use(express.static(__dirname));
 
 // Middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: false }));
