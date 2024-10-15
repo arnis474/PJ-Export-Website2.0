@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const path = require('path');
-const sgMail = require('@sendgrid/mail'); // Import SendGrid Mail
+const sgMail = require('@sendgrid/mail');
 const bodyParser = require('body-parser');
 
 const app = express();
@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 });
 
 // Set your SendGrid API key
-sgMail.setApiKey(process.env.SENDGRID_API_KEY); // Make sure to set this environment variable
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 // Route to handle form submission
 app.post('/submit-form', (req, res) => {
@@ -29,7 +29,7 @@ app.post('/submit-form', (req, res) => {
   // Email options
   const msg = {
     to: 'info@pjexport.co.uk', // Replace with the recipient's email
-    from: email,  // This should be a verified sender in your SendGrid account
+    from: email, // This should be a verified sender in your SendGrid account
     subject: `New Message from ${name}`,
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     html: `<strong>Name: ${name}</strong><br><strong>Email:</strong> ${email}<br><strong>Message:</strong><br>${message}`,
@@ -43,7 +43,7 @@ app.post('/submit-form', (req, res) => {
       res.status(200).send('Message sent successfully!');
     })
     .catch((error) => {
-      console.error(error);
+      console.error('Error sending email:', error.response.body); // Log detailed error response
       res.status(500).send('There was an error sending the email.');
     });
 });
