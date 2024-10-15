@@ -33,7 +33,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active text-white px-5" href="home.html">Home</a>
+            <a class="nav-item nav-link active text-white px-5" href="/home.html">Home</a>
             <a class="nav-item nav-link text-white px-5" href="/aboutus">About Us</a>
             <a class="nav-item nav-link text-white px-5" href="/wipingrags">Wiping Rags</a>
             <a class="nav-item nav-link text-white px-5" href="/usedclothes">Used Clothes</a>
@@ -42,6 +42,39 @@
         </div>
       </nav>
 
+<!-- Hero Section -->
+<section style="position: relative; text-align: center;">
+  <div style="background-image: url('/contact/images/AboutUs.png'); height: 70vh; background-size: cover; background-position: center;">
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgb(73, 70, 70); background-color: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 10px;">
+              <h1 style="color: white;">Contact Us</h1>
+              <p style="color: white;">Reach out to us</p>
+          </div>
+      </div>
+  </section>
+
+  <!-- Email section -->
+  <Section id="email-section" class="bg-black py-5">
+    <div class="container">
+        <legend class="text-white text-center mb-4">Have more questions? Email us</legend>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <form>
+                    <div class="mb-3">
+                        <input type="text" id="nameInput" class="form-control" placeholder="Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" id="emailInput" class="form-control" placeholder="Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea id="messageInput" class="form-control" placeholder="Your Message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Footer -->
 <footer class="bg-black text-white py-4">
