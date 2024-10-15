@@ -1,20 +1,20 @@
-AboutUs/
+aboutus/
    └── index.html  (from aboutus.html)
 
-UsedClothes/
+usedclothesedClothes/
    └── index.html  (from usedclothes.html)
 
-Contact/
+contact/
    └── index.html  (from contact.html)
 
-Returns/
+returns/
    └── index.html  (from returns.html)
 
-Shipping/
+shipping/
    └── index.html  (from shipping.html)
 
-WipingRags/
+wipingragsipingRags/
    └── index.html  (from wipingrags.html)
 
-FAQ/
+faq/
    └── index.html  (from faq.html)
