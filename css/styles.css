@@ -626,3 +626,52 @@ footer {
   padding: 0; /* No padding */
   margin: 0; /* No margin */
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Navbar: Adjust padding and font size */
+  .navbar-nav .nav-link {
+    padding: 10px 0;
+    font-size: 15px; /* Slightly smaller font size */
+  }
+
+  /* Hero section adjustments */
+  .hero-section {
+    height: 50vh; /* Reduce height for mobile */
+  }
+  .hero-section h1 {
+    font-size: 2rem; /* Smaller heading */
+  }
+  .hero-section p {
+    font-size: 1rem; /* Smaller paragraph text */
+  }
+
+  /* Features Grid: Stacking columns */
+  .features-section .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* Offer Section and Products: Full width on small screens */
+  #offer-section .col-md-4,
+  #products .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Footer: Stack columns vertically */
+  footer .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  footer h5, footer ul {
+    text-align: center;
+  }
+
+  /* Adjusting buttons for full-width on mobile */
+  .btn-download-price-list {
+    width: 100%; /* Full width button */
+  }
+}
