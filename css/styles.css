@@ -345,18 +345,18 @@ img.product-photo {
 /* Styling the entire offer box as a link */
 .offer-box-link {
   display: block; /* Makes the entire box clickable */
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #ffffff; /* White background by default */
+  color: #000000; /* Black text by default */
   padding: 15px 30px; /* Similar padding */
   border: 2px solid black; /* Border for button */
   border-radius: 50px; /* Rounded edges */
   box-shadow: 4px 4px 0px 0px #274eff, 10px 10px 0px 0px black; /* Initial shadow */
   font-size: 1.1rem; /* Font size */
   text-decoration: none; /* No underline for links */
-  transition: all 0.3s ease; /* Smooth transition */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for all properties */
 }
 
-/* Hover effect for offer box link */
+/* Hover effect for offer box link and content */
 .offer-box-link:hover {
   background-color: #274eff; /* Change background to blue */
   color: #ffffff; /* Change text color to white */
@@ -364,14 +364,21 @@ img.product-photo {
   transform: translate(4px, 4px); /* Move down and right */
 }
 
-/* Ensure the link remains black and without underline in all states */
-#offer-section .offer-box-link,
-#offer-section .offer-box-link:visited,
-#offer-section .offer-box-link:hover,
-#offer-section .offer-box-link:focus {
-  color: #000000; /* Black color */
+/* Ensure child elements also change color with the same timing */
+.offer-box-link:hover .offer-box-content h4,
+.offer-box-link:hover .offer-box-content p {
+  color: #ffffff; /* Change text to white */
+  transition: color 0.3s ease; /* Ensure text changes color at the same time */
+}
+
+/* Ensure the link remains black and without underline in normal and visited states */
+.offer-box-link,
+.offer-box-link:visited {
+  color: #000000; /* Black text color */
   text-decoration: none; /* No underline */
 }
+
+
 
 /* --------------------------
    About Us Section Styles
@@ -413,6 +420,12 @@ img.product-photo {
   background-color: #274eff; /* Change background to blue on hover */
   transform: translateY(4px); /* Move down on hover */
   box-shadow: none; /* Remove shadow on hover */
+}
+
+/* Change text color to white when hovering over the link */
+.about-us-link:hover .about-us-container, 
+.about-us-link:hover .about-us-container p {
+  color: #ffffff; /* Change text to white */
 }
 
 /* Paragraph styling inside the About Us content */
