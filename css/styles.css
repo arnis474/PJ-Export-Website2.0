@@ -527,24 +527,39 @@ img.product-photo {
 --------------------------- */
 
 .btn-download-price-list {
-  display: inline-block;
-  background-color: #ffffff;
-  color: #000000;
-  padding: 15px 30px; /* Padding */
-  border: 2px solid black;
-  border-radius: 50px; /* Rounded edges */
-  box-shadow: 4px 4px 0px 0px #274eff, 10px 10px 0px 0px black; /* Initial shadow */
+  width: 200px; /* Set a fixed width for the button */
+  padding: 15px; /* Padding for height and some horizontal space */
+  border-radius: 30px; /* Very rounded corners */
+  background-color: white; /* White background */
+  color: black; /* Text color (default) */
+  display: flex; /* Center content */
+  align-items: center; /* Vertical center */
+  justify-content: center; /* Horizontal center */
+  margin: 0 auto; /* Center the button horizontally */
+  position: relative; /* For positioning */
+  border: 2px solid black; /* Border */
+  box-shadow: 4px 4px 0px 0px #274eff; /* Initial shadow */
   font-size: 1.1rem; /* Font size */
   text-decoration: none; /* No underline */
   transition: all 0.3s ease; /* Smooth transition */
 }
 
-.btn-download-price-list:hover {
-  background-color: #274eff; /* Change background to blue */
-  color: #ffffff; /* Change text color to white */
-  box-shadow: 0px 0px 0px 0px #274eff, 0px 0px 0px 0px black; /* Remove shadow */
-  transform: translate(4px, 4px); /* Move down and right */
+/* Add this to ensure links do not inherit blue color */
+.btn-download-price-list:link,
+.btn-download-price-list:visited {
+  color: black; /* Ensure the text color is black for all states */
 }
+
+/* Hover state */
+.btn-download-price-list:hover {
+  box-shadow: 0px 0px 0px 0px #274eff; /* Remove shadow */
+  transform: translate(4px, 4px); /* Move down and right */
+  background-color: #274eff; /* Change background to blue */
+  color: #ffffff; /* Change text color to white on hover */
+}
+
+
+
 
 /* --------------------------
    General Page Styles
