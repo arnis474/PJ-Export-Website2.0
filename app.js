@@ -55,13 +55,14 @@ app.listen(port, () => {
 
 // JavaScript for toggling the hamburger menu on mobile
 document.addEventListener('DOMContentLoaded', function() {
-    const toggleButton = document.querySelector('.navbar-toggler');
-    const navbarMenu = document.querySelector('#navbarNavAltMarkup');
+  const toggleButton = document.querySelector('.navbar-toggler');
+  const navbarMenu = document.querySelector('#navbarNav');
 
-    toggleButton.addEventListener('click', function() {
-        navbarMenu.classList.toggle('collapse'); // Toggle the visibility of the menu
-    });
+  toggleButton.addEventListener('click', function() {
+      navbarMenu.classList.toggle('show'); // Toggle the visibility of the menu
+  });
 });
+
 
 // JavaScript to enable smooth horizontal scrolling for the features grid
 document.addEventListener('DOMContentLoaded', function() {

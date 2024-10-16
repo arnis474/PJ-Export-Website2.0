@@ -640,25 +640,33 @@ footer {
     padding: 10px 0; /* Increase header size */
   }
 
-  /* Center logo and make it smaller */
-  .navbar-brand {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+/* Remove border around hamburger menu */
+.navbar-toggler {
+  border-color: transparent;
+}
+
+/* White hamburger menu without white square */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Center the brand logo on mobile view */
+.navbar-brand {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Mobile view: make the navbar collapse vertically */
+@media (max-width: 768px) {
+  .navbar-nav {
+      flex-direction: column;
+      text-align: center;
   }
 
-  .navbar-brand img {
-    max-height: 50px; /* Smaller logo */
-    padding: 5px 0; /* Prevent overflow */
+  .navbar-nav .nav-item {
+      padding: 10px 0; /* Add some space between menu items */
   }
-
-  /* White hamburger menu without white square */
-  .navbar-toggler {
-    border-color: transparent;
-  }
-  .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-  }
+}
 
   /* Hero section: Make image square and increase container width */
   .hero-section {
