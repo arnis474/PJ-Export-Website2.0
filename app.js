@@ -1,9 +1,9 @@
 require('dotenv').config();
-
 const express = require('express');
 const path = require('path');
 const sgMail = require('@sendgrid/mail');
 const bodyParser = require('body-parser');
+const device = require('express-device');  // Import express-device
 
 const app = express();
 const port = 3000;
@@ -14,9 +14,18 @@ app.use(express.static(__dirname));
 // Middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Route to serve the index.html page
+// Middleware to detect device
+app.use(device.capture());
+
+// Route to serve the correct homepage based on device type
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  if (req.device.type === 'phone' || req.device.type === 'tablet') {
+    // Serve the mobile version of the homepage
+    res.sendFile(path.join(__dirname, 'mobile.html'));
+  } else {
+    // Serve the desktop version of the homepage
+    res.sendFile(path.join(__dirname, 'home.html'));
+  }
 });
 
 // Set your SendGrid API key
@@ -28,8 +37,8 @@ app.post('/submit-form', (req, res) => {
 
   // Email options
   const msg = {
-    to: 'info@pjexport.co.uk', // Replace with the recipient's email
-    from: email, // This should be a verified sender in your SendGrid account
+    to: 'info@pjexport.co.uk',
+    from: email,
     subject: `New Message from ${name}`,
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     html: `<strong>Name: ${name}</strong><br><strong>Email:</strong> ${email}<br><strong>Message:</strong><br>${message}`,
@@ -43,7 +52,7 @@ app.post('/submit-form', (req, res) => {
       res.status(200).send('Message sent successfully!');
     })
     .catch((error) => {
-      console.error('Error sending email:', error.response.body); // Log detailed error response
+      console.error('Error sending email:', error.response.body);
       res.status(500).send('There was an error sending the email.');
     });
 });
