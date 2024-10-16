@@ -677,6 +677,9 @@ footer {
   }
 
   .features-section .col-md-4 {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+  padding: 15px;
     flex: 0 0 40%; /* Smaller square containers */
     max-width: 40%;
     height: 200px; /* Ensure containers are square */
@@ -695,6 +698,9 @@ footer {
 
   /* What We Offer: Place images below containers */
   #offer-section .col-md-4 {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 20px;
@@ -713,6 +719,9 @@ footer {
 
   /* Footer: Restore "Additional Info," "Quick Links," and "Contact Us" sections */
   footer .row {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
     flex-wrap: wrap;
     justify-content: space-between;
     text-align: center;
@@ -726,6 +735,8 @@ footer {
   }
 
   .contact-us {
+  text-align: center;
+  margin-top: 20px;
     text-align: center;
     margin-top: 20px;
   }

@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbarMenu = document.querySelector('#navbarNavAltMarkup');
 
     toggleButton.addEventListener('click', function() {
-        navbarMenu.classList.toggle('show'); // Toggle the visibility of the menu
+        navbarMenu.classList.toggle('collapse'); // Toggle the visibility of the menu
     });
 });
 
