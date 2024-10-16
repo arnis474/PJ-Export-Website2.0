@@ -403,6 +403,19 @@
 </footer>	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>	
 <script>
+  function isMobileDevice() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+  }
+
+  if (isMobileDevice()) {
+    console.log("Mobile device detected!");
+    window.location.href = "mobile.html";
+  } else {
+    console.log("Not a mobile device.");
+  }
+</script>
+
+<script>
   // Function to check if the device is mobile
   function isMobileDevice() {
     return /Mobi|Android/i.test(navigator.userAgent);
