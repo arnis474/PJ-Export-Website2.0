@@ -52,3 +52,32 @@ app.post('/submit-form', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
 });
+
+// JavaScript for toggling the hamburger menu on mobile
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.querySelector('.navbar-toggler');
+    const navbarMenu = document.querySelector('#navbarNavAltMarkup');
+
+    toggleButton.addEventListener('click', function() {
+        navbarMenu.classList.toggle('show'); // Toggle the visibility of the menu
+    });
+});
+
+// JavaScript to enable smooth horizontal scrolling for the features grid
+document.addEventListener('DOMContentLoaded', function() {
+    const featuresSection = document.querySelector('.features-section');
+    featuresSection.style.overflowX = 'scroll'; // Enable horizontal scrolling
+
+    // Smooth scroll on touch devices
+    featuresSection.addEventListener('touchstart', function(event) {
+        event.preventDefault();
+        const touch = event.touches[0];
+        let startX = touch.clientX;
+
+        featuresSection.addEventListener('touchmove', function(event) {
+            const touch = event.touches[0];
+            const deltaX = touch.clientX - startX;
+            featuresSection.scrollLeft -= deltaX;
+        });
+    });
+});
