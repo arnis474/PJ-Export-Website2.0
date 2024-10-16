@@ -630,76 +630,101 @@ footer {
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
 
-  /* Sticky Header: Make navbar sticky on scroll */
+  /* Sticky Header: Make navbar sticky on scroll and increase size */
   .navbar {
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    background-color: black; /* Ensure it stays visible with black background */
+    background-color: black;
+    padding: 10px 0; /* Increase header size */
   }
-  
+
   /* Center logo and make it smaller */
   .navbar-brand {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
   .navbar-brand img {
     max-height: 50px; /* Smaller logo */
+    padding: 5px 0; /* Prevent overflow */
   }
 
-  /* White hamburger menu */
+  /* White hamburger menu without white square */
+  .navbar-toggler {
+    border-color: transparent;
+  }
   .navbar-toggler-icon {
-    background-color: white; /* Make the hamburger menu white */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
 
-  /* Hero section: Reduce height and increase container width */
+  /* Hero section: Make image square and increase container width */
   .hero-section {
-    height: 30vh; /* Reduce hero image size */
+    height: 30vh; /* Make the hero image smaller and square */
   }
 
   .hero-section .container {
-    width: 90%; /* Make container wider */
+    width: 95%; /* Make container wider */
   }
 
-  /* Features Grid: Display containers horizontally with smaller sizes */
+  /* Features Grid: Scroll horizontally with square containers */
+  .features-section {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 15px; /* Add some spacing between containers */
+  }
+
   .features-section .col-md-4 {
-    flex: 0 0 33.33%; /* Display horizontally with 3 per row */
-    max-width: 33.33%;
+    flex: 0 0 40%; /* Smaller square containers */
+    max-width: 40%;
+    height: 200px; /* Ensure containers are square */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #ddd;
   }
 
-  /* What We Offer: Resize containers and images to prevent overflow */
+  .features-section img {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* What We Offer: Place images below containers */
   #offer-section .col-md-4 {
-    flex: 0 0 45%; /* Make containers smaller */
-    max-width: 45%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
   }
 
   #offer-section img {
-    max-width: 100%; /* Ensure images don't overflow */
-    height: auto;
+    max-width: 100%;
+    margin-top: 15px;
   }
 
-  /* Move clothes3.png below the used clothes container */
-  .clothes-img {
-    order: 3; /* Move the image down */
+  /* Available Products: Make headings smaller to prevent overflow */
+  #products .feature-box h5 {
+    font-size: 1rem;
+    line-height: 1.2; /* Smaller heading to fit text */
   }
 
-  /* Available Products: 3 rows of 2 containers */
-  #products .col-md-4 {
-    flex: 0 0 48%; /* Make space for 2 per row */
+  /* Footer: Restore "Additional Info," "Quick Links," and "Contact Us" sections */
+  footer .row {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  /* Make Additional Info and Quick Links appear side by side */
+  footer .col-md-3 {
+    flex: 0 0 48%;
     max-width: 48%;
     margin-bottom: 20px;
   }
 
-  /* Footer: Horizontal layout for Additional Info and Quick Links */
-  footer .row {
-    flex-wrap: nowrap;
-    justify-content: space-between;
-  }
-
-  /* Center Contact Us and social media icons */
   .contact-us {
     text-align: center;
     margin-top: 20px;
