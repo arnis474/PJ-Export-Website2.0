@@ -627,51 +627,86 @@ footer {
   margin: 0; /* No margin */
 }
 
-/* Responsive adjustments */
+/* Mobile-specific adjustments */
 @media (max-width: 768px) {
-  /* Navbar: Adjust padding and font size */
-  .navbar-nav .nav-link {
-    padding: 10px 0;
-    font-size: 15px; /* Slightly smaller font size */
+
+  /* Sticky Header: Make navbar sticky on scroll */
+  .navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: black; /* Ensure it stays visible with black background */
+  }
+  
+  /* Center logo and make it smaller */
+  .navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .navbar-brand img {
+    max-height: 50px; /* Smaller logo */
   }
 
-  /* Hero section adjustments */
+  /* White hamburger menu */
+  .navbar-toggler-icon {
+    background-color: white; /* Make the hamburger menu white */
+  }
+
+  /* Hero section: Reduce height and increase container width */
   .hero-section {
-    height: 50vh; /* Reduce height for mobile */
-  }
-  .hero-section h1 {
-    font-size: 2rem; /* Smaller heading */
-  }
-  .hero-section p {
-    font-size: 1rem; /* Smaller paragraph text */
+    height: 30vh; /* Reduce hero image size */
   }
 
-  /* Features Grid: Stacking columns */
+  .hero-section .container {
+    width: 90%; /* Make container wider */
+  }
+
+  /* Features Grid: Display containers horizontally with smaller sizes */
   .features-section .col-md-4 {
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 33.33%; /* Display horizontally with 3 per row */
+    max-width: 33.33%;
   }
 
-  /* Offer Section and Products: Full width on small screens */
-  #offer-section .col-md-4,
+  /* What We Offer: Resize containers and images to prevent overflow */
+  #offer-section .col-md-4 {
+    flex: 0 0 45%; /* Make containers smaller */
+    max-width: 45%;
+  }
+
+  #offer-section img {
+    max-width: 100%; /* Ensure images don't overflow */
+    height: auto;
+  }
+
+  /* Move clothes3.png below the used clothes container */
+  .clothes-img {
+    order: 3; /* Move the image down */
+  }
+
+  /* Available Products: 3 rows of 2 containers */
   #products .col-md-4 {
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 48%; /* Make space for 2 per row */
+    max-width: 48%;
     margin-bottom: 20px;
   }
 
-  /* Footer: Stack columns vertically */
-  footer .col-md-3 {
-    flex: 0 0 100%;
-    max-width: 100%;
-    margin-bottom: 20px;
+  /* Footer: Horizontal layout for Additional Info and Quick Links */
+  footer .row {
+    flex-wrap: nowrap;
+    justify-content: space-between;
   }
-  footer h5, footer ul {
+
+  /* Center Contact Us and social media icons */
+  .contact-us {
     text-align: center;
+    margin-top: 20px;
   }
 
-  /* Adjusting buttons for full-width on mobile */
-  .btn-download-price-list {
-    width: 100%; /* Full width button */
+  .social-media-container {
+    justify-content: center;
+    margin-top: 20px;
   }
 }
