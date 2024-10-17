@@ -42,7 +42,7 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link active text-white px-5" href="/home.html">Home</a>
+        <a class="nav-item nav-link active text-white px-5" href="/home">Home</a>
             <a class="nav-item nav-link text-white px-5" href="/aboutus">About Us</a>
             <a class="nav-item nav-link text-white px-5" href="/wipingrags">Wiping Rags</a>
             <a class="nav-item nav-link text-white px-5" href="/usedclothes">Used Clothes</a>
@@ -135,8 +135,8 @@
 
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                    <form>
-                        <div class="mb-3">
+                  <form action="/submit-form" method="POST">
+                    <div class="mb-3">
                             <input type="text" id="nameInput" class="form-control" placeholder="Name" required>
                         </div>
                         <div class="mb-3">
@@ -191,7 +191,7 @@
       <div class="col-md-3">
         <h5 class="text-white">Quick Links</h5>
         <ul class="list-unstyled">
-          <li><a href="home.html" class="text-white" style="text-decoration: none;">Home</a></li>
+          <li><a href="/home" class="text-white" style="text-decoration: none;">Home</a></li>
           <li><a href="/aboutus" class="text-white" style="text-decoration: none;">About Us</a></li>
           <li><a href="/wipingrags" class="text-white" style="text-decoration: none;">Wiping Rags</a></li>
           <li><a href="/usedclothes" class="text-white" style="text-decoration: none;">Used Clothes</a></li>
