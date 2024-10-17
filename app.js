@@ -6,6 +6,17 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
+document.addEventListener('DOMContentLoaded', function () {
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const navbarCollapse = document.querySelector('#navbarNavAltMarkup');
+
+  if (navbarToggler) {
+    navbarToggler.addEventListener('click', function () {
+      navbarCollapse.classList.toggle('show');
+    });
+  }
+});
+
 // Middleware to serve static files (CSS, images, etc.)
 app.use(express.static(path.join(__dirname, 'static')));
 
