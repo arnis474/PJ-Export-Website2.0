@@ -17,6 +17,17 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+// Route to serve home.html page
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'home.html'));
+});
+
+// Route for serving pages from folders like aboutus, contact, etc.
+app.get('/:folderName', (req, res) => {
+  const folderName = req.params.folderName;
+  res.sendFile(path.join(__dirname, folderName, 'index.html'));
+});
+
 // Route to handle form submission
 app.post('/submit-form', (req, res) => {
   const { name, email, message } = req.body;
@@ -38,16 +49,15 @@ app.post('/submit-form', (req, res) => {
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,  
   };
 
-  // Send the email
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.log('Error:', error);  // Log the error
-      res.status(500).send('There was an error sending the email.');
-    } else {
-      console.log('Email sent: ' + info.response);
-      res.status(200).send('Message sent successfully!');
-    }
-  });
+// Send email
+transporter.sendMail(mailOptions, (error, info) => {
+  if (error) {
+    console.log('Error while sending email:', error);  // Log the error
+    res.status(500).send('There was an error sending the email.');
+  } else {
+    console.log('Email sent successfully: ', info);  // Log the response info
+    res.status(200).send('Message sent successfully!');
+  }
 });
 
 // Start the server
