@@ -14,13 +14,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Route to serve the index.html page
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html')); // Serve index.html by default
 });
 
-// Route to serve home.html page
-app.get('/', (req, res) => {
+// Route to serve home.html page (comment out if you want index.html instead)
+/*
+app.get('/home', (req, res) => {
   res.sendFile(path.join(__dirname, 'home.html'));
 });
+*/
 
 // Route for serving pages from folders like aboutus, contact, etc.
 app.get('/:folderName', (req, res) => {
@@ -49,15 +51,16 @@ app.post('/submit-form', (req, res) => {
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,  
   };
 
-// Send email
-transporter.sendMail(mailOptions, (error, info) => {
-  if (error) {
-    console.log('Error while sending email:', error);  // Log the error
-    res.status(500).send('There was an error sending the email.');
-  } else {
-    console.log('Email sent successfully: ', info);  // Log the response info
-    res.status(200).send('Message sent successfully!');
-  }
+  // Send the email
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.log('Error while sending email:', error);  // Log the error
+      res.status(500).send('There was an error sending the email.');
+    } else {
+      console.log('Email sent successfully: ', info);  // Log the response info
+      res.status(200).send('Message sent successfully!');
+    }
+  });
 });
 
 // Start the server
