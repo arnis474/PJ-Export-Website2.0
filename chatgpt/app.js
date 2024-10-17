@@ -14,10 +14,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Route to serve the index.html page
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html')); // Serve index.html by default
 });
 
-// Route for other pages like aboutus, contact, etc.
+// Route to serve home.html page (comment out if you want index.html instead)
+/*
+app.get('/home', (req, res) => {
+  res.sendFile(path.join(__dirname, 'home.html'));
+});
+*/
+
+// Route for serving pages from folders like aboutus, contact, etc.
 app.get('/:folderName', (req, res) => {
   const folderName = req.params.folderName;
   res.sendFile(path.join(__dirname, folderName, 'index.html'));
@@ -25,7 +32,7 @@ app.get('/:folderName', (req, res) => {
 
 // Route to handle form submission
 app.post('/submit-form', (req, res) => {
-    const { name, email, message } = req.body;
+  const { name, email, message } = req.body;
 
   // Set up nodemailer to send email
   let transporter = nodemailer.createTransport({
@@ -36,14 +43,13 @@ app.post('/submit-form', (req, res) => {
     },
   });
 
- // Email options
- let mailOptions = {
+  // Email options
+  let mailOptions = {
     from: email,  
     to: 'info@pjexport.co.uk',  // Replace with the recipient's email
     subject: `New Message from ${name}`,  
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,  
   };
-
 
   // Send the email
   transporter.sendMail(mailOptions, (error, info) => {
