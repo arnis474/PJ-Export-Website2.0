@@ -33,7 +33,7 @@ app.post('/submit-form', (req, res) => {
   // Email options
   let mailOptions = {
     from: email,  
-    to: 'pjexport@yahoo.com',  // Replace with the recipient's email
+    to: 'info@pjexport.co.uk',  // Replace with the recipient's email
     subject: `New Message from ${name}`,  
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,  
   };
@@ -41,7 +41,7 @@ app.post('/submit-form', (req, res) => {
   // Send the email
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.log(error);
+      console.log('Error:', error);  // Log the error
       res.status(500).send('There was an error sending the email.');
     } else {
       console.log('Email sent: ' + info.response);
