@@ -163,7 +163,7 @@ section {
     width: 135px; /* Smaller size for mobile */
     margin: 0px; /* Less space between images on mobile */
   }
-
+}
 
 /* Apply black background specifically to the features-section */
 .features-section {
@@ -335,6 +335,50 @@ img.product-photo {
 /* --------------------------
    Offer Section Flexbox Layout
 --------------------------- */
+/* General styles for mobile devices */
+@media (max-width: 768px) {
+  /* Make clothes3.png and rags4.png larger */
+  .image-container img {
+    width: 100%;  /* Full width for mobile */
+    max-height: 300px;  /* Control height */
+    object-fit: cover;  /* Ensure proper fitting */
+  }
+
+  /* Automatically scroll between images (add animation) */
+  .image-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .image-container img {
+    position: absolute;
+    width: 100%;
+    animation: scroll-images 8s infinite alternate ease-in-out;
+  }
+
+  /* Keyframes for the image scrolling */
+  @keyframes scroll-images {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* Smaller offer containers */
+  .offer-box-link .offer-box-content {
+    font-size: 0.9rem;  /* Slightly smaller font size */
+  }
+
+  .offer-box-container {
+    display: none;  /* Hide RagsBulk.jpg and UsedClothes2.jpg */
+  }
+
+  /* Make the offer containers smaller to fit better on mobile */
+  .offer-box-link {
+    width: 90%; /* Smaller width */
+    margin: 0 auto; /* Center */
+  }
+}
+
 
 /* Flexbox ensures that the items in the row have equal height */
 #offer-section .row {
