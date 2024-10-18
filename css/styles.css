@@ -335,33 +335,34 @@ img.product-photo {
 /* --------------------------
    Offer Section Flexbox Layout
 --------------------------- */
-/* Autoscroll larger images on mobile */
+/* Auto scroll for larger images on mobile */
 @media (max-width: 768px) {
   .image-container img[src*="Rags4.png"], .image-container img[src*="clothes3.png"] {
-    width: 125%; /* Larger width for these images */
+    width: 150%; /* Increase width for scrolling */
     height: auto;
     max-width: 100%;
     animation: scroll-horizontal 10s infinite alternate ease-in-out;
   }
 }
 
-
-  /* Stop scroll at image edges */
-  @keyframes scroll-horizontal {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+/* Adjust the scrolling behavior to stop at image edges */
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
   }
-
-  @media (max-width: 768px) {
-    .offer-box-container img[src*="RagsBulk.jpg"], .offer-box-container img[src*="UsedClothes2.jpg"] {
-      display: none;
-    }
+  100% {
+    transform: translateX(-25%); /* Only scroll 25% of the width to ensure part of the image is always visible */
   }
-  
+}
+
+ /* Hide RagsBulk.jpg and UsedClothes2.jpg on mobile */
+@media (max-width: 768px) {
+  .offer-box-container img[src*="RagsBulk.jpg"], 
+  .offer-box-container img[src*="UsedClothes2.jpg"] {
+    display: none !important;
+  }
+}
+
 
 
 /* Flexbox ensures that the items in the row have equal height */
