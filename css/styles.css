@@ -338,16 +338,13 @@ img.product-photo {
 /* Autoscroll larger images on mobile */
 @media (max-width: 768px) {
   .image-container img[src*="Rags4.png"], .image-container img[src*="clothes3.png"] {
-    width: 100%; /* Larger width for these images */
+    width: 125%; /* Larger width for these images */
     height: auto;
     max-width: 100%;
     animation: scroll-horizontal 10s infinite alternate ease-in-out;
   }
+}
 
-  /* Hide RagsBulk and UsedClothes2 images on mobile */
-  .offer-box-container img[src*="RagsBulk.jpg"], .offer-box-container img[src*="UsedClothes2.jpg"] {
-    display: none;
-  }
 
   /* Stop scroll at image edges */
   @keyframes scroll-horizontal {
@@ -358,7 +355,13 @@ img.product-photo {
       transform: translateX(-100%);
     }
   }
-}
+
+  @media (max-width: 768px) {
+    .offer-box-container img[src*="RagsBulk.jpg"], .offer-box-container img[src*="UsedClothes2.jpg"] {
+      display: none;
+    }
+  }
+  
 
 
 /* Flexbox ensures that the items in the row have equal height */
