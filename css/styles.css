@@ -148,10 +148,7 @@ section {
   justify-content: space-between; /* Evenly space images */
   align-items: center;
   max-width: 100%; /* Full width */
-  overflow-x: auto; /* Allow horizontal scroll if necessary */
   white-space: nowrap; /* Prevent images from breaking into multiple rows */
-  scroll-behavior: smooth; /* Smooth scroll */
-  animation: auto-scroll 10s linear infinite; /* Auto scroll on mobile */
 }
 
 .custom-row-img {
