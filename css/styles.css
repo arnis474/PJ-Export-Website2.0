@@ -340,49 +340,39 @@ img.product-photo {
 /* --------------------------
    Offer Section Flexbox Layout
 --------------------------- */
-/* General styles for mobile devices */
+/* Autoscroll larger images on mobile */
 @media (max-width: 768px) {
-  /* Make clothes3.png and rags4.png larger */
-  .image-container img {
-    width: 100%;  /* Full width for mobile */
-    max-height: 300px;  /* Control height */
-    object-fit: cover;  /* Ensure proper fitting */
-  }
-
-  /* Automatically scroll between images (add animation) */
-  .image-container {
-    overflow: hidden;
-    position: relative;
+  /* Make Rags4 and Clothes3 larger */
+  .image-container img[src*="Rags4.png"], .image-container img[src*="clothes3.png"] {
     width: 100%;
+    height: auto;
+    max-width: 100%;
+    animation: scroll-horizontal 10s infinite alternate ease-in-out;
   }
 
-  .image-container img {
-    position: absolute;
-    width: 100%;
-    animation: scroll-images 8s infinite alternate ease-in-out;
+  /* Hide RagsBulk and UsedClothes2 images on mobile */
+  .offer-box-container img[src*="RagsBulk.jpg"], .offer-box-container img[src*="UsedClothes2.jpg"] {
+    display: none;
   }
 
-  /* Keyframes for the image scrolling */
-  @keyframes scroll-images {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+  /* Make the hero image square on mobile */
+  #hero-image {
+    background-image: url('/images/mobile.jpg');
+    background-size: cover;
+    height: 100vw; /* Make it square based on viewport width */
   }
 
-  /* Smaller offer containers */
-  .offer-box-link .offer-box-content {
-    font-size: 0.9rem;  /* Slightly smaller font size */
-  }
-
-  .offer-box-container {
-    display: none;  /* Hide RagsBulk.jpg and UsedClothes2.jpg */
-  }
-
-  /* Make the offer containers smaller to fit better on mobile */
-  .offer-box-link {
-    width: 90%; /* Smaller width */
-    margin: 0 auto; /* Center */
+  /* Autoscroll animation */
+  @keyframes scroll-horizontal {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
   }
 }
+
 
 
 /* Flexbox ensures that the items in the row have equal height */
