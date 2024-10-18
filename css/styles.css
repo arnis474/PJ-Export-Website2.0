@@ -160,7 +160,7 @@ section {
 /* Auto scroll for mobile */
 @media (max-width: 768px) {
   .custom-row-img {
-    width: 90px; /* Smaller size for mobile */
+    width: 140px; /* Smaller size for mobile */
     margin: 0 5px; /* Less space between images on mobile */
   }
 
