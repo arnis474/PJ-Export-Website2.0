@@ -166,16 +166,6 @@ section {
     width: 180px; /* Smaller size for mobile */
     margin: 0 10px; /* Less space between images on mobile */
   }
-  
-  @keyframes auto-scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-}
 
 
 /* Apply black background specifically to the features-section */
