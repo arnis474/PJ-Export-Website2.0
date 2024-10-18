@@ -74,17 +74,12 @@ section {
   }
 }
 
-/* Mobile-specific adjustments */
-@media (max-width: 768px) {
-  /* Change the hero image on mobile and make it square */
+  /* Make the hero image square on mobile */
   #hero-image {
-    background-image: url('/images/mobile.jpg'); /* Mobile-specific image */
-    width: 100vw; /* Full viewport width */
-    height: 100vw; /* Height equal to the width to make it square */
-    background-size: cover; /* Ensure the image covers the entire square */
-    background-position: center; /* Center the background image */
+    background-image: url('/images/mobile.jpg');
+    background-size: cover;
+    height: 100vw; /* Make it square based on viewport width */
   }
-}
 
    
 /* Smaller heading for mobile hero banner */
@@ -342,9 +337,8 @@ img.product-photo {
 --------------------------- */
 /* Autoscroll larger images on mobile */
 @media (max-width: 768px) {
-  /* Make Rags4 and Clothes3 larger */
   .image-container img[src*="Rags4.png"], .image-container img[src*="clothes3.png"] {
-    width: 100%;
+    width: 100%; /* Larger width for these images */
     height: auto;
     max-width: 100%;
     animation: scroll-horizontal 10s infinite alternate ease-in-out;
@@ -355,14 +349,7 @@ img.product-photo {
     display: none;
   }
 
-  /* Make the hero image square on mobile */
-  #hero-image {
-    background-image: url('/images/mobile.jpg');
-    background-size: cover;
-    height: 100vw; /* Make it square based on viewport width */
-  }
-
-  /* Autoscroll animation */
+  /* Stop scroll at image edges */
   @keyframes scroll-horizontal {
     0% {
       transform: translateX(0);
@@ -372,7 +359,6 @@ img.product-photo {
     }
   }
 }
-
 
 
 /* Flexbox ensures that the items in the row have equal height */
