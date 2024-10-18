@@ -134,6 +134,36 @@ section {
    Features Section Styles
 --------------------------- */
 
+/* Custom Image Row Section */
+.custom-image-row-section {
+  background-color: black; /* Black background */
+  padding: 20px 0; /* Padding around the section */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-image-container {
+  display: flex;
+  justify-content: space-between; /* Evenly space images */
+  align-items: center;
+  max-width: 100%; /* Full width */
+  overflow-x: auto; /* Allow horizontal scroll if necessary */
+  white-space: nowrap; /* Prevent images from breaking into multiple rows */
+}
+
+.custom-row-img {
+  width: 250px; /* Set the width of each image */
+  height: auto; /* Maintain aspect ratio */
+  margin: 0 10px; /* Space between images */
+}
+
+@media (max-width: 768px) {
+  .custom-row-img {
+    width: 180px; /* Make images smaller for mobile */
+  }
+}
+
 /* Apply black background specifically to the features-section */
 .features-section {
   background-color: black;
