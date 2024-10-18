@@ -80,7 +80,13 @@ section {
   #hero-image {
     background-image: url('/images/mobile.jpg'); /* Mobile-specific image */
   }
-
+   
+/* Smaller heading for mobile hero banner */
+@media (max-width: 768px) {
+  .hero-banner-container h1 {
+    font-size: 2rem; /* Adjust the size as per your preference */
+  }
+   
 /* Adjust logo size */
 @media (max-width: 768px) {
   .navbar-brand img {
