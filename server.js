@@ -6,8 +6,12 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
-// Middleware to serve static files (CSS, images, etc.)
-app.use(express.static(path.join(__dirname, 'static')));
+// Middleware to serve static files from 'css' and 'images' folders
+app.use('/css', express.static(path.join(__dirname, 'css')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
+// Serve app.js as a static file from the root
+app.use('/app.js', express.static(path.join(__dirname, 'app.js')));
 
 // Middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: false }));
