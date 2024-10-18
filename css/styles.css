@@ -150,19 +150,33 @@ section {
   max-width: 100%; /* Full width */
   overflow-x: auto; /* Allow horizontal scroll if necessary */
   white-space: nowrap; /* Prevent images from breaking into multiple rows */
+  scroll-behavior: smooth; /* Smooth scroll */
+  animation: auto-scroll 10s linear infinite; /* Auto scroll on mobile */
 }
 
 .custom-row-img {
-  width: 250px; /* Set the width of each image */
+  width: 300px; /* Larger image size for desktop */
   height: auto; /* Maintain aspect ratio */
-  margin: 0 10px; /* Space between images */
+  margin: 0 20px; /* Space between images */
 }
 
+/* Auto scroll for mobile */
 @media (max-width: 768px) {
   .custom-row-img {
-    width: 180px; /* Make images smaller for mobile */
+    width: 180px; /* Smaller size for mobile */
+    margin: 0 10px; /* Less space between images on mobile */
+  }
+  
+  @keyframes auto-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
   }
 }
+
 
 /* Apply black background specifically to the features-section */
 .features-section {
