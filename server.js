@@ -10,6 +10,10 @@ const port = 3000;
 app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
+app.get('/favicon.ico', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'favicon.ico'));
+});
+
 // Serve app.js as a static file from the root
 app.use('/app.js', express.static(path.join(__dirname, 'app.js')));
 
