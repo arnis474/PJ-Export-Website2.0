@@ -584,31 +584,30 @@ img.product-photo {
 
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
-  /* Ensure the container displays images in a horizontal row */
+  /* Container for horizontal scrolling */
   .product-scroll-container {
     overflow-x: auto; /* Enable horizontal scrolling */
-    white-space: nowrap; /* Prevent images from wrapping to the next line */
+    white-space: nowrap; /* Prevent the items from wrapping */
   }
 
+  /* Horizontal scrolling row for products */
   .product-scroll {
-    display: flex;
-    flex-direction: row; /* Horizontal layout */
+    display: inline-flex; /* Ensure horizontal layout */
   }
 
-  /* Adjust each product image container for mobile */
-  .product-scroll .col-md-4 {
-    display: inline-block; /* Allow them to sit side by side horizontally */
-    width: auto; /* Auto width to fit content */
-    flex: 0 0 auto; /* Prevent containers from stretching */
+  /* Each product item in the row */
+  .product-item {
+    display: inline-block; /* Align items horizontally */
+    margin-right: 15px; /* Space between images */
   }
 
-  /* Ensure the images are responsive in this row */
-  .product-scroll img {
-    width: 150px; /* Adjust the image size as needed for mobile */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 10px; /* Space between images */
+  /* Adjust each product image for mobile */
+  .product-item img {
+    width: 150px; /* Set width for mobile */
+    height: auto; /* Keep aspect ratio */
   }
 }
+
 
 
 /* --------------------------
