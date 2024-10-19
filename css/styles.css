@@ -584,7 +584,6 @@ img.product-photo {
 
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
-  
   /* Container for horizontal scrolling */
   .product-scroll-container {
     overflow-x: auto; /* Enable horizontal scrolling */
@@ -595,6 +594,7 @@ img.product-photo {
   /* Horizontal scrolling row for products */
   .product-scroll {
     display: inline-flex; /* Ensure horizontal layout */
+    width: max-content; /* Prevent shrinking and keep all items in one line */
   }
 
   /* Each product item in the row */
@@ -603,19 +603,20 @@ img.product-photo {
     margin-right: 15px; /* Space between images */
   }
 
-  /* Ensure the images keep their size on mobile */
+  /* Adjust the image size for mobile */
   .product-item img {
-    width: 250px; /* Set a larger width for the images */
+    width: 70%; /* Reduce the size of the images to 70% of their container */
+    max-width: 200px; /* Ensure images do not exceed 200px in width */
     height: auto; /* Maintain aspect ratio */
   }
 
-  /* Keep the heading separate from the scrolling area */
+  /* Ensure heading doesn't scroll */
   #products h2 {
     margin-bottom: 20px;
     text-align: center;
+    position: relative; /* Keeps the heading in place */
   }
 }
-
 
 
 /* --------------------------
