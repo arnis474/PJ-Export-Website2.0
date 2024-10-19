@@ -585,27 +585,31 @@ img.product-photo {
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
   /* Ensure the container displays images in a horizontal row */
-  #products .container {
-    display: flex;
-    flex-direction: row;
+  .product-scroll-container {
     overflow-x: auto; /* Enable horizontal scrolling */
     white-space: nowrap; /* Prevent images from wrapping to the next line */
   }
 
+  .product-scroll {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+  }
+
   /* Adjust each product image container for mobile */
-  #products .col-md-4 {
+  .product-scroll .col-md-4 {
     display: inline-block; /* Allow them to sit side by side horizontally */
     width: auto; /* Auto width to fit content */
     flex: 0 0 auto; /* Prevent containers from stretching */
   }
 
   /* Ensure the images are responsive in this row */
-  #products img {
+  .product-scroll img {
     width: 150px; /* Adjust the image size as needed for mobile */
     height: auto; /* Maintain aspect ratio */
     margin-right: 10px; /* Space between images */
   }
 }
+
 
 /* --------------------------
    Social Media Icon Styles
